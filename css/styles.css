@@ -356,6 +356,7 @@ a {
 
 /* En tablets y móviles ajustamos los botones del menú desplegable */
 @media (max-width: 991px) {
+
     .menu-navegacion .btn-conmutador-tema,
     .menu-navegacion .btn-principal {
         width: 100%;
@@ -363,114 +364,150 @@ a {
     }
 }
 
-/* En móviles adaptamos la órbita, el planeta y los botones del Hero */
+/* En móviles adaptamos la órbita, el planeta y los 6 satélites del Hero */
 @media (max-width: 576px) {
     .contenedor-orbita {
-        width: 330px;
-        height: 330px;
+        width: 340px;
+        height: 340px;
         margin: 15px auto;
     }
 
-    /* El planeta central con 230px tiene espacio de sobra para el contenido */
+    /* El planeta central alberga cómodamente el contenido */
     .planeta-central {
-        width: 230px;
-        height: 230px;
-        padding: 12px;
+        width: 215px;
+        height: 215px;
+        padding: 10px;
     }
 
     .planeta-central .badge {
-        font-size: 0.65rem;
-        padding: 3px 8px;
+        font-size: 0.62rem;
+        padding: 2px 7px;
         margin-bottom: 2px !important;
     }
 
     .planeta-central h1,
     .planeta-central .h3 {
-        font-size: 1.15rem !important;
-        margin-bottom: 2px !important;
+        font-size: 1.1rem !important;
+        margin-bottom: 1px !important;
     }
 
     .planeta-central h2,
     .planeta-central .h6 {
-        font-size: 0.85rem !important;
+        font-size: 0.8rem !important;
         margin-bottom: 2px !important;
     }
 
     .planeta-central p {
-        font-size: 0.68rem !important;
+        font-size: 0.65rem !important;
         line-height: 1.25 !important;
-        margin-bottom: 8px !important;
+        margin-bottom: 6px !important;
     }
 
     /* Botón Empezar Ahora dentro del planeta en móvil */
     .planeta-central .btn {
-        font-size: 0.75rem !important;
-        padding: 4px 14px !important;
+        font-size: 0.72rem !important;
+        padding: 4px 12px !important;
         margin: 0 !important;
     }
 
-    /* Satélites móviles colocados en las 4 esquinas diagonales (máximo espacio) */
+    /* Los 6 satélites permanecen visibles con tamaño proporcional */
     .satelite {
-        width: 52px;
-        height: 52px;
-        font-size: 0.62rem;
+        width: 48px;
+        height: 48px;
+        font-size: 0.58rem;
+        display: flex !important;
     }
 
     .satelite small {
-        font-size: 0.48rem;
+        font-size: 0.44rem;
     }
 
-    /* 4 esquinas diagonales: no tocan el planeta y no se salen del marco */
+    /* Distribución circular de los 6 satélites en móvil */
     .sat-1 {
-        top: 8px;
-        left: 20px;
+        top: 6px;
+        left: 45px;
     }
 
     .sat-2 {
-        top: 8px;
-        right: 20px;
+        top: 6px;
+        right: 45px;
     }
 
     .sat-3 {
-        top: auto;
-        bottom: 8px;
-        left: 20px;
+        top: 146px;
+        left: 0px;
+        bottom: auto;
     }
 
     .sat-4 {
-        top: auto;
-        bottom: 8px;
-        right: 20px;
+        top: 146px;
+        right: 0px;
+        bottom: auto;
     }
 
-    /* Ocultamos los satélites 5 y 6 para mantener simetría perfecta de 4 satélites */
-    .sat-5,
+    .sat-5 {
+        bottom: 6px;
+        right: 45px;
+        top: auto;
+    }
+
     .sat-6 {
-        display: none !important;
+        bottom: 6px;
+        left: 45px;
+        top: auto;
     }
 }
 
 /* Pantallas extra pequeñas (móviles de 320px) */
 @media (max-width: 350px) {
     .contenedor-orbita {
-        width: 290px;
-        height: 290px;
+        width: 300px;
+        height: 300px;
     }
 
     .planeta-central {
-        width: 200px;
-        height: 200px;
+        width: 195px;
+        height: 195px;
         padding: 8px;
     }
 
     .satelite {
-        width: 44px;
-        height: 44px;
-        font-size: 0.55rem;
+        width: 42px;
+        height: 42px;
+        font-size: 0.52rem;
     }
 
-    .sat-1 { top: 4px; left: 12px; }
-    .sat-2 { top: 4px; right: 12px; }
-    .sat-3 { bottom: 4px; left: 12px; }
-    .sat-4 { bottom: 4px; right: 12px; }
+    .satelite small {
+        font-size: 0.4rem;
+    }
+
+    .sat-1 {
+        top: 4px;
+        left: 35px;
+    }
+
+    .sat-2 {
+        top: 4px;
+        right: 35px;
+    }
+
+    .sat-3 {
+        top: 129px;
+        left: 0px;
+    }
+
+    .sat-4 {
+        top: 129px;
+        right: 0px;
+    }
+
+    .sat-5 {
+        bottom: 4px;
+        right: 35px;
+    }
+
+    .sat-6 {
+        bottom: 4px;
+        left: 35px;
+    }
 }
