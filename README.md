@@ -2,7 +2,7 @@
 
 **Asignatura:** Diseño de Interfaces Web  
 **Curso:** Desarrollo de Aplicaciones Web (DAW)  
-**Autor:** Sergio  
+**Autor:** Juanma, Carlos Navarro y Bakunin  
 
 ---
 
@@ -27,7 +27,7 @@ DISENO_INTERFACES/
 │   └── dark.css                # Hoja de estilos alternativa (Modo Oscuro)
 │
 └── img/
-    ├── boceto-ut1.png          # Boceto de estructura y distribución diseñado en la UT1
+    ├── boceto-ut1.png          # Boceto de estructura y distribución diseñado en  el prototipo. 
     └── validador-w3c.png       # Captura de pantalla de la validación CSS del W3C sin errores
 ```
 
@@ -76,3 +76,4 @@ Las hojas de estilo `css/styles.css` y `css/dark.css` se han comprobado con el v
 1. Clonar o descargar el repositorio.
 2. Abrir el archivo `index.html` en cualquier navegador web moderno (Chrome, Firefox, Edge).
 3. Hacer clic en el botón superior **🌙 Modo Oscuro** para alternar entre el tema claro predeterminado y el tema oscuro.
+
