@@ -6,14 +6,14 @@
 
 ---
 
-## 🚀 Descripción del Proyecto
+## Descripción del Proyecto
 Implementación de la página principal (*landing page*) para **Start Light**, un servicio de conectividad satelital de alta velocidad y baja latencia.
 
 El proyecto parte del diseño inicial y boceto realizado en equipo durante la **UT1** (Opción A), aplicando maquetación con **HTML5 semántico**, framework **Bootstrap 5** para la estructura adaptativa (*responsive*) y personalización con **CSS3**.
 
 ---
 
-## 📁 Estructura del Repositorio
+## Estructura del Repositorio
 El proyecto sigue estrictamente la organización de directorios solicitada:
 
 ```text
@@ -33,7 +33,7 @@ DISENO_INTERFACES/
 
 ---
 
-## 🛠️ Justificación Técnica de los Requisitos
+## Justificación Técnica de los Requisitos
 
 ### 1. Uso y Jerarquía de Estilos CSS3 (Demostración de Especificidad)
 Se han implementado y documentado con comentarios los tres niveles de cascada:
@@ -69,11 +69,12 @@ La web ha sido verificada en las herramientas de desarrollo (*DevTools*) simulan
 
 ### 5. Validación W3C
 Las hojas de estilo `css/styles.css` y `css/dark.css` se han comprobado con el validador oficial del W3C ([W3C CSS Validation Service](https://jigsaw.w3.org/css-validator)), obteniendo una validación limpia sin errores críticos de sintaxis. La evidencia gráfica se encuentra en `img/validador-w3c.png`.
+![Validador-W3C](img/validador-w3c.png)
 
 ---
 
-## 💻 Instrucciones para Visualizar el Proyecto
+##  Instrucciones para Visualizar el Proyecto
 1. Clonar o descargar el repositorio.
 2. Abrir el archivo `index.html` en cualquier navegador web moderno (Chrome, Firefox, Edge).
-3. Hacer clic en el botón superior **🌙 Modo Oscuro** para alternar entre el tema claro predeterminado y el tema oscuro.
+3. Hacer clic en el botón superior **Modo Oscuro** para alternar entre el tema claro predeterminado y el tema oscuro.
 
