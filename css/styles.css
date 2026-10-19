@@ -37,6 +37,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 a {
@@ -62,6 +63,9 @@ a {
     font-size: 0.75rem;
     font-weight: 600;
     padding: 6px 14px;
+    white-space: normal;
+    display: inline-block;
+    max-width: 90%;
 }
 
 /* Botón principal redondeado */
@@ -130,8 +134,8 @@ a {
 /* Contenedor relativo que sirve de marco para los satélites */
 .contenedor-orbita {
     position: relative;
-    width: 380px;
-    height: 380px;
+    width: 420px;
+    height: 420px;
     max-width: 100%;
     margin: 20px auto;
     display: flex;
@@ -150,8 +154,8 @@ a {
 
 /* Planeta central circular con la información principal */
 .planeta-central {
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     background-color: var(--color-tarjeta);
     border: 2px solid var(--color-principal);
@@ -160,18 +164,20 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 16px;
     text-align: center;
     z-index: 2;
 }
 
-.planeta-central h1 {
+.planeta-central h1,
+.planeta-central .h3 {
     font-size: 1.35rem;
     margin-bottom: 2px;
 }
 
-.planeta-central h2 {
-    font-size: 0.9rem;
+.planeta-central h2,
+.planeta-central .h6 {
+    font-size: 0.95rem;
     margin-bottom: 4px;
 }
 
@@ -179,6 +185,10 @@ a {
     font-size: 0.78rem;
     line-height: 1.3;
     margin-bottom: 8px;
+}
+
+.planeta-central .btn {
+    white-space: nowrap;
 }
 
 /* Satélites circulares posicionados con position: absolute */
@@ -205,40 +215,40 @@ a {
     font-weight: normal;
 }
 
-/* Coordenadas fijas para situar cada satélite alrededor del círculo */
+/* Coordenadas fijas en escritorio (420px de ancho) */
 .sat-1 {
-    top: 8px;
-    left: 50px;
+    top: 12px;
+    left: 65px;
     border-color: #f97316;
 }
 
 .sat-2 {
-    top: 8px;
-    right: 50px;
+    top: 12px;
+    right: 65px;
     border-color: var(--color-principal);
 }
 
 .sat-3 {
-    top: 155px;
+    top: 177px;
     left: 0px;
     border-color: #eab308;
 }
 
 .sat-4 {
-    top: 155px;
+    top: 177px;
     right: 0px;
     border-color: #ef4444;
 }
 
 .sat-5 {
-    bottom: 8px;
-    right: 50px;
+    bottom: 12px;
+    right: 65px;
     border-color: var(--color-secundario);
 }
 
 .sat-6 {
-    bottom: 8px;
-    left: 50px;
+    bottom: 12px;
+    left: 65px;
     border-color: #ec4899;
 }
 
@@ -356,16 +366,16 @@ a {
 /* En móviles adaptamos la órbita, el planeta y los botones del Hero */
 @media (max-width: 576px) {
     .contenedor-orbita {
-        width: 300px;
-        height: 300px;
-        margin: 10px auto;
+        width: 330px;
+        height: 330px;
+        margin: 15px auto;
     }
 
-    /* El planeta central se ajusta para que todo el texto y el botón queden dentro */
+    /* El planeta central con 230px tiene espacio de sobra para el contenido */
     .planeta-central {
-        width: 205px;
-        height: 205px;
-        padding: 10px;
+        width: 230px;
+        height: 230px;
+        padding: 12px;
     }
 
     .planeta-central .badge {
@@ -374,33 +384,35 @@ a {
         margin-bottom: 2px !important;
     }
 
-    .planeta-central h1 {
-        font-size: 1.1rem;
-        margin-bottom: 0px;
+    .planeta-central h1,
+    .planeta-central .h3 {
+        font-size: 1.15rem !important;
+        margin-bottom: 2px !important;
     }
 
-    .planeta-central h2 {
-        font-size: 0.8rem;
-        margin-bottom: 2px;
+    .planeta-central h2,
+    .planeta-central .h6 {
+        font-size: 0.85rem !important;
+        margin-bottom: 2px !important;
     }
 
     .planeta-central p {
-        font-size: 0.68rem;
-        line-height: 1.2;
-        margin-bottom: 6px !important;
+        font-size: 0.68rem !important;
+        line-height: 1.25 !important;
+        margin-bottom: 8px !important;
     }
 
     /* Botón Empezar Ahora dentro del planeta en móvil */
     .planeta-central .btn {
-        font-size: 0.72rem;
-        padding: 4px 10px;
-        margin-bottom: 0 !important;
+        font-size: 0.75rem !important;
+        padding: 4px 14px !important;
+        margin: 0 !important;
     }
 
-    /* Reducimos el tamaño de los satélites para que no se superpongan */
+    /* Satélites móviles colocados en las 4 esquinas diagonales (máximo espacio) */
     .satelite {
-        width: 50px;
-        height: 50px;
+        width: 52px;
+        height: 52px;
         font-size: 0.62rem;
     }
 
@@ -408,30 +420,57 @@ a {
         font-size: 0.48rem;
     }
 
-    /* Coordenadas móviles ajustadas al círculo de 300px */
+    /* 4 esquinas diagonales: no tocan el planeta y no se salen del marco */
     .sat-1 {
-        top: 2px;
-        left: 35px;
+        top: 8px;
+        left: 20px;
     }
 
     .sat-2 {
-        top: 2px;
-        right: 35px;
+        top: 8px;
+        right: 20px;
     }
 
     .sat-3 {
-        top: 125px;
-        left: 0px;
+        top: auto;
+        bottom: 8px;
+        left: 20px;
     }
 
     .sat-4 {
-        top: 125px;
-        right: 0px;
+        top: auto;
+        bottom: 8px;
+        right: 20px;
     }
 
-    /* Ocultamos los 2 satélites inferiores en móviles para evitar amontonamiento */
+    /* Ocultamos los satélites 5 y 6 para mantener simetría perfecta de 4 satélites */
     .sat-5,
     .sat-6 {
-        display: none;
+        display: none !important;
     }
+}
+
+/* Pantallas extra pequeñas (móviles de 320px) */
+@media (max-width: 350px) {
+    .contenedor-orbita {
+        width: 290px;
+        height: 290px;
+    }
+
+    .planeta-central {
+        width: 200px;
+        height: 200px;
+        padding: 8px;
+    }
+
+    .satelite {
+        width: 44px;
+        height: 44px;
+        font-size: 0.55rem;
+    }
+
+    .sat-1 { top: 4px; left: 12px; }
+    .sat-2 { top: 4px; right: 12px; }
+    .sat-3 { bottom: 4px; left: 12px; }
+    .sat-4 { bottom: 4px; right: 12px; }
 }
