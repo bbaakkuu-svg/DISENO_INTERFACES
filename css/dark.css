@@ -1,0 +1,101 @@
+/* ==========================================================================
+   PRÁCTICA: DISEÑO DE INTERFACES WEB - LANDING PAGE
+   HOJA DE ESTILOS ALTERNATIVA: MODO OSCURO (css/dark.css) - NIVEL 1º DAW
+   ==========================================================================
+   Esta hoja alternativa solo cambia los colores básicos para aplicar
+   el modo oscuro, cumpliendo el requisito de tema alternativo.
+   ========================================================================== */
+
+/* Fondo general y color de texto */
+body {
+    background-color: #0a0d1a !important;
+    color: #f1f5f9 !important;
+}
+
+/* Menú de navegación en modo oscuro */
+.menu-navegacion {
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+}
+
+.menu-navegacion .nav-link {
+    color: #cbd5e1 !important;
+}
+
+.menu-navegacion .nav-link:hover {
+    color: #00f2fe !important;
+}
+
+.btn-conmutador-tema {
+    background-color: #1a2234 !important;
+    border-color: #374151 !important;
+    color: #f1f5f9 !important;
+}
+
+/* Planeta central y satélites */
+.planeta-central {
+    background-color: #111827 !important;
+    border-color: #00f2fe !important;
+}
+
+.satelite {
+    background-color: #1a2234 !important;
+    color: #ffffff !important;
+}
+
+/* Botón principal en modo oscuro */
+.btn-principal {
+    background-color: #00f2fe !important;
+    color: #0a0d1a !important;
+}
+
+.btn-principal:hover {
+    background-color: #38bdf8 !important;
+}
+
+/* Tarjetas y cajas de contenido */
+.tarjeta-plan,
+.caja-tecnologia,
+.caja-formulario {
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+}
+
+.tarjeta-plan:hover {
+    border-color: #00f2fe !important;
+}
+
+.lista-ventajas li {
+    border-color: #1f2937 !important;
+    color: #cbd5e1 !important;
+}
+
+.caja-estadistica {
+    background-color: #1a2234 !important;
+    border-color: #374151 !important;
+}
+
+/* Formulario */
+.input-personalizado {
+    background-color: #1a2234 !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
+}
+
+.input-personalizado:focus {
+    border-color: #00f2fe !important;
+}
+
+/* Pie de página */
+.pie-pagina {
+    background-color: #070a14 !important;
+    border-color: #374151 !important;
+}
+
+.pie-pagina a {
+    color: #94a3b8 !important;
+}
+
+.pie-pagina a:hover {
+    color: #00f2fe !important;
+}
