@@ -1,0 +1,130 @@
+$color-fondo: #0a0d1a;
+$color-tarjeta: #111827;
+$color-caja: #1a2234;
+$color-principal: #00f2fe; 
+$color-secundario: #a855f7; 
+$color-borde: #374151;
+$color-texto: #f1f5f9;
+$color-texto-muted: #94a3b8;
+
+
+@function sombra-neon($color, $alfa: 0.4) {
+    @return 0 0 15px rgba($color, $alfa);
+}
+
+@function px-to-rem($px) {
+    @return ($px / 16)+rem;
+}
+
+
+@mixin estilo-base($bg: $color-tarjeta, $borde: $color-borde) {
+    background-color: $bg !important;
+    border-color: $borde !important;
+}
+
+@mixin transicion-suave($tiempo: 0.3s) {
+    transition: all $tiempo ease-in-out;
+}
+
+body {
+    background-color: $color-fondo !important;
+    color: $color-texto !important;
+}
+
+.menu-navegacion {
+    background-color: rgba(17, 24, 39, 0.92) !important;
+    border-color: $color-borde !important;
+    box-shadow: 0 px-to-rem(4) px-to-rem(20) rgba(0, 0, 0, 0.5) !important;
+}
+
+.menu-navegacion .nav-link {
+    color: #cbd5e1 !important;
+    @include transicion-suave;
+}
+
+.menu-navegacion .nav-link:hover {
+    color: $color-principal !important;
+}
+
+.btn-conmutador-tema {
+    @include estilo-base($color-caja, $color-borde);
+    color: $color-texto !important;
+    @include transicion-suave;
+}
+
+.btn-conmutador-tema:hover {
+    border-color: $color-principal !important;
+    color: $color-principal !important;
+}
+
+.planeta-central {
+    @include estilo-base($color-tarjeta, $color-principal);
+    box-shadow: sombra-neon($color-principal, 0.25) !important;
+}
+
+.satelite {
+    @include estilo-base($color-caja, $color-secundario);
+    color: #ffffff !important;
+    box-shadow: 0 px-to-rem(4) px-to-rem(12) rgba(0, 0, 0, 0.6) !important;
+}
+
+.btn-principal {
+    background-color: $color-principal !important;
+    color: $color-fondo !important;
+    box-shadow: sombra-neon($color-principal, 0.4);
+    @include transicion-suave;
+}
+
+.btn-principal:hover {
+    background-color: lighten($color-principal, 10%) !important;
+    box-shadow: sombra-neon($color-principal, 0.6);
+}
+
+.tarjeta-plan,
+.caja-tecnologia,
+.caja-formulario {
+    @include estilo-base;
+    @include transicion-suave;
+}
+
+.tarjeta-plan:hover {
+    border-color: $color-principal !important;
+}
+
+.lista-ventajas li {
+    border-color: rgba(255, 255, 255, 0.06) !important;
+    color: #cbd5e1 !important;
+}
+
+.caja-estadistica {
+    @include estilo-base($color-caja, rgba(255, 255, 255, 0.05));
+}
+
+.input-personalizado {
+    @include estilo-base($color-caja, $color-borde);
+    color: #ffffff !important;
+    @include transicion-suave;
+}
+
+.input-personalizado:focus {
+    border-color: $color-principal !important;
+    box-shadow: 0 0 0 px-to-rem(3.2) rgba($color-principal, 0.25) !important;
+}
+
+.input-personalizado::placeholder {
+    color: #64748b !important;
+}
+
+.pie-pagina {
+    background-color: darken($color-fondo, 3%) !important;
+    border-color: $color-borde !important;
+}
+
+.pie-pagina a {
+    color: $color-texto-muted !important;
+    @include transicion-suave;
+}
+
+.pie-pagina a:hover {
+    color: $color-principal !important;
+}
