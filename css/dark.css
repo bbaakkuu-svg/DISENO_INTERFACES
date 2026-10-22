@@ -1,4 +1,4 @@
-:root {
+root {
   --color-fondo: #0a0d1a;
   --color-tarjeta: #111827;
   --color-caja: #1a2234;
@@ -13,31 +13,39 @@
 body {
   background-color: var(--color-fondo) !important;
   color: var(--color-texto) !important;
+
+  /* --------------------------------------------------------------------------
+   2. CUERPO Y FONDO
+   -------------------------------------------------------------------------- */
+  body {
+    background-color: var(--color-fondo) !important;
+    color: var(--color-texto) !important;
+  }
+
+  /* --------------------------------------------------------------------------
+   3. MENÚ DE NAVEGACIÓN FLOTANTE EN MODO OSCURO
+   -------------------------------------------------------------------------- */
+  .menu-navegacion {
+    background-color: rgba(17, 24, 39, 0.92) !important;
+    border-color: var(--color-borde) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .menu-navegacion .nav-link:hover {
+    color: var(--color-principal) !important;
+  }
+
+  .btn-conmutador-tema {
+    background-color: var(--color-caja) !important;
+    border-color: var(--color-borde) !important;
+    color: var(--color-texto) !important;
+    color: var(--color-principal) !important;
+  }
 }
 
-.menu-navegacion {
-  background-color: rgba(17, 24, 39, 0.92) !important;
-  border-color: var(--color-borde) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
-}
-
-.menu-navegacion .nav-link {
-  color: #cbd5e1 !important;
-}
-.menu-navegacion .nav-link:hover {
-  color: var(--color-principal) !important;
-}
-
-.btn-conmutador-tema {
-  background-color: var(--color-caja) !important;
-  border-color: var(--color-borde) !important;
-  color: var(--color-texto) !important;
-}
-.btn-conmutador-tema:hover {
-  border-color: var(--color-principal) !important;
-  color: var(--color-principal) !important;
-}
-
+/* --------------------------------------------------------------------------
+   4. ÓRBITA Y ELEMENTOS ESPACIALES
+   -------------------------------------------------------------------------- */
 .planeta-central {
   background-color: var(--color-tarjeta) !important;
   border-color: var(--color-principal) !important;
@@ -49,18 +57,26 @@ body {
   border-color: var(--color-secundario) !important;
   color: #ffffff !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+  background-color: var(--color-tarjeta) !important;
+  border-color: var(--color-principal) !important;
+  box-shadow: 0 0 25px rgba(0, 242, 254, 0.25) !important;
 }
 
+/* Botón con efecto neón en modo oscuro */
 .btn-principal {
   background-color: var(--color-principal) !important;
   color: #0a0d1a !important;
   box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
 }
+
 .btn-principal:hover {
   background-color: #38bdf8 !important;
   box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
 }
 
+/* --------------------------------------------------------------------------
+   5. TARJETAS Y CONTENEDORES
+   -------------------------------------------------------------------------- */
 .tarjeta-plan,
 .caja-tecnologia,
 .caja-formulario {
@@ -70,6 +86,8 @@ body {
 
 .tarjeta-plan:hover {
   border-color: var(--color-principal) !important;
+  background-color: var(--color-tarjeta) !important;
+  border-color: var(--color-borde) !important;
 }
 
 .lista-ventajas li {
@@ -82,26 +100,34 @@ body {
   border-color: rgba(255, 255, 255, 0.05) !important;
 }
 
+/* Campos de formulario */
 .input-personalizado {
   background-color: var(--color-caja) !important;
   border-color: var(--color-borde) !important;
   color: #ffffff !important;
 }
+
 .input-personalizado:focus {
   border-color: var(--color-principal) !important;
   box-shadow: 0 0 0 0.2rem rgba(0, 242, 254, 0.25) !important;
 }
+
 .input-personalizado::placeholder {
   color: #64748b !important;
 }
 
+/* --------------------------------------------------------------------------
+   6. PIE DE PÁGINA (FOOTER)
+   -------------------------------------------------------------------------- */
 .pie-pagina {
   background-color: #070a14 !important;
   border-color: var(--color-borde) !important;
 }
+
 .pie-pagina a {
   color: #94a3b8 !important;
 }
+
 .pie-pagina a:hover {
   color: var(--color-principal) !important;
 }
