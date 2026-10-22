@@ -1,0 +1,51 @@
+@use "sass:color";
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+
+.btn-principal {
+    background-color: f.obtener-color(principal);
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: f.rem(14.4px);
+    border-radius: f.rem(25px);
+    border: none;
+    padding: f.rem(8px) f.rem(22px);
+    @include m.animacion-suave(background-color, 0.2s);
+
+    &:hover {
+        // Función nativa para oscurecer dinámicamente un 10%
+        background-color: color.adjust(f.obtener-color(principal), $lightness: -10%);
+    }
+}
+
+.badge-principal {
+    background-color: color.change(f.obtener-color(principal), $alpha: 0.12);
+    color: f.obtener-color(principal);
+    border: 1px solid f.obtener-color(principal);
+    border-radius: f.rem(20px);
+    font-size: f.rem(12px);
+    font-weight: 600;
+    padding: f.rem(6px) f.rem(14px);
+    display: inline-block;
+    white-space: normal;
+    max-width: 90%;
+}
+
+// Añadir al final de scss/components/_buttons.scss
+.btn-conmutador-tema {
+    font-size: f.rem(13.6px);
+    font-weight: 600;
+    border-radius: f.rem(20px);
+    border: 1px solid f.obtener-color(borde-claro);
+    background-color: f.obtener-color(caja-claro);
+    color: f.obtener-color(texto-claro);
+    padding: f.rem(6px) f.rem(14px);
+    cursor: pointer;
+    @include m.animacion-suave;
+
+    &:hover {
+        border-color: f.obtener-color(principal);
+        color: f.obtener-color(principal);
+    }
+}

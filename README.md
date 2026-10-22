@@ -26,6 +26,10 @@ DISENO_INTERFACES/
 │   ├── styles.css              # Hoja de estilos externa principal (Modo Claro / Predeterminado)
 │   └── dark.css                # Hoja de estilos alternativa (Modo Oscuro)
 │
+├── scss/
+│   ├── styles.scss             # Fuente Sass del tema claro
+│   └── dark.scss               # Fuente Sass del tema oscuro
+│
 └── img/
     ├── boceto-ut1.png          # Boceto de estructura y distribución diseñado en  el prototipo. 
     └── validador-w3c.png       # Captura de pantalla de la validación CSS del W3C sin errores
@@ -56,6 +60,7 @@ Se han adaptado componentes del framework para otorgar una identidad visual prop
 ### 3. Tema Alternativo: Modo Oscuro (`css/dark.css`)
 * Se ha creado la hoja alternativa `css/dark.css` que redefine las variables de color hacia una paleta oscura espacial (fondo `#0a0d1a`, tarjetas `#111827`, texto claro `#f1f5f9` y acentos cian/morado neón).
 * **Conmutador interactivo:** En el menú de navegación se incluye un botón (`🌙 Modo Oscuro / ☀️ Modo Claro`) que activa o desactiva la hoja alternativa de manera instantánea, permitiendo comprobar ambos temas con un solo clic.
+* La hoja `css/dark.css` se genera desde `scss/dark.scss`. Tras instalar Dart Sass, compila ambas hojas con `sass --no-source-map scss/styles.scss css/styles.css` y `sass --no-source-map scss/dark.scss css/dark.css`.
 
 ---
 
@@ -77,4 +82,3 @@ Las hojas de estilo `css/styles.css` y `css/dark.css` se han comprobado con el v
 1. Clonar o descargar el repositorio.
 2. Abrir el archivo `index.html` en cualquier navegador web moderno (Chrome, Firefox, Edge).
 3. Hacer clic en el botón superior **Modo Oscuro** para alternar entre el tema claro predeterminado y el tema oscuro.
-
