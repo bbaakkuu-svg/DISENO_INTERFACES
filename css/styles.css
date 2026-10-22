@@ -289,7 +289,10 @@ a {
 }
 
 @media (max-width: 991px) {
-  .menu-navegacion .btn-conmutador-tema,
+  .menu-navegacion .btn-conmutador-tema {
+    width: auto;
+    max-width: none;
+  }
   .menu-navegacion .btn-principal {
     width: 100%;
     max-width: 12.5rem;

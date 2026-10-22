@@ -66,7 +66,7 @@ Se han adaptado componentes del framework para otorgar una identidad visual prop
 
 ### 4. Diseño Adaptativo (Responsive)
 La web ha sido verificada en las herramientas de desarrollo (*DevTools*) simulando dispositivos móviles y tablets:
-* El menú colapsa en un botón desplegable en pantallas pequeñas.
+* El menú colapsa en un botón desplegable en pantallas pequeñas y el conmutador de tema permanece visible junto al botón hamburguesa.
 * La rejilla de tarjetas pasa de 3 columnas (escritorio) a 2 columnas (tablets) y 1 columna fluida (móviles).
 * El componente de la órbita satelital se escala proporcionalmente mediante *media queries* para evitar cualquier desbordamiento horizontal en pantallas estrechas.
 
