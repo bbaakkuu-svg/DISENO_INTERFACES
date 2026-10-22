@@ -1,476 +1,387 @@
-/* --------------------------------------------------------------------------
-   1. VARIABLES GLOBALES (Paleta de colores en Modo Claro)
-   -------------------------------------------------------------------------- */
 :root {
-    --color-fondo: #f8fafc;
-    /* Gris muy claro para el fondo */
-    --color-tarjeta: #ffffff;
-    /* Blanco para las tarjetas */
-    --color-caja: #f1f5f9;
-    /* Gris suave para cajas secundarias e inputs */
-    --color-principal: #0284c7;
-    /* Azul satelital */
-    --color-secundario: #6366f1;
-    /* Morado decorativo */
-    --color-borde: #e2e8f0;
-    /* Gris para bordes */
-    --color-texto: #0f172a;
-    /* Texto oscuro muy legible */
-    --color-texto-muted: #64748b;
-    /* Texto secundario atenuado */
+  --color-fondo: #f8fafc;
+  --color-tarjeta: #ffffff;
+  --color-caja: #f1f5f9;
+  --color-principal: #0284c7;
+  --color-secundario: #6366f1;
+  --color-borde: #e2e8f0;
+  --color-texto: #0f172a;
+  --color-texto-muted: #64748b;
 }
 
-/* --------------------------------------------------------------------------
-   2. ESTILOS GENERALES
-   -------------------------------------------------------------------------- */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* --------------------------------------------------------------------------
-   3. CLASES PROPIAS Y SOBRESCRITURA DE BOOTSTRAP
-   -------------------------------------------------------------------------- */
-
-/* Clase para aplicar el color azul principal a textos */
 .color-principal {
-    color: var(--color-principal) !important;
+  color: var(--color-principal) !important;
 }
 
-/* Píldora / Etiqueta personalizada */
 .badge-principal {
-    background-color: #e0f2fe;
-    color: var(--color-principal);
-    border: 1px solid var(--color-principal);
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 6px 14px;
-    white-space: normal;
-    display: inline-block;
-    max-width: 90%;
+  background-color: rgba(2, 132, 199, 0.1);
+  color: var(--color-principal);
+  border: 1px solid var(--color-principal);
+  border-radius: 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.375rem 0.875rem;
+  display: inline-block;
+  white-space: normal;
+  max-width: 90%;
 }
 
-/* Botón principal redondeado */
 .btn-principal {
-    background-color: var(--color-principal);
-    color: #ffffff !important;
-    font-weight: 600;
-    font-size: 0.9rem;
-    border-radius: 25px;
-    border: none;
-    padding: 8px 22px;
+  background-color: var(--color-principal);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 1.5625rem;
+  border: none;
+  padding: 0.5rem 1.375rem;
+  transition: background-color 0.2s ease;
 }
-
 .btn-principal:hover {
-    background-color: #0369a1;
+  background-color: rgb(0.5853087504%, 38.6303775241%, 58.2382206614%);
 }
 
-/* --------------------------------------------------------------------------
-   4. MENÚ DE NAVEGACIÓN FLOTANTE (HEADER)
-   -------------------------------------------------------------------------- */
 .header-flotante {
-    position: sticky;
-    top: 15px;
-    z-index: 1000;
+  position: sticky;
+  top: 0.9375rem;
+  z-index: 1000;
 }
 
 .menu-navegacion {
-    background-color: #ffffff;
-    border: 1px solid var(--color-borde);
-    border-radius: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border-radius: 1.875rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
-
 .menu-navegacion .nav-link {
-    color: var(--color-texto-muted) !important;
-    font-weight: 500;
-    padding: 6px 14px !important;
-    border-radius: 15px;
+  color: var(--color-texto-muted) !important;
+  font-weight: 500;
+  padding: 0.375rem 0.875rem !important;
+  border-radius: 0.9375rem;
+  transition: color 0.2s ease;
 }
-
 .menu-navegacion .nav-link:hover {
-    color: var(--color-principal) !important;
+  color: var(--color-principal) !important;
 }
 
-/* Botón para cambiar entre modo claro y oscuro */
 .btn-conmutador-tema {
-    font-size: 0.85rem;
-    font-weight: 600;
-    border-radius: 20px;
-    border: 1px solid var(--color-borde);
-    background-color: var(--color-caja);
-    color: var(--color-texto);
-    padding: 6px 14px;
-    cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 1.25rem;
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-caja);
+  color: var(--color-texto);
+  padding: 0.375rem 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
-
 .btn-conmutador-tema:hover {
-    border-color: var(--color-principal);
-    color: var(--color-principal);
+  border-color: var(--color-principal);
+  color: var(--color-principal);
 }
 
-/* --------------------------------------------------------------------------
-   5. PORTADA CON ÓRBITA Y SATÉLITES
-   -------------------------------------------------------------------------- */
-
-/* Contenedor relativo que sirve de marco para los satélites */
 .contenedor-orbita {
-    position: relative;
-    width: 420px;
-    height: 420px;
-    max-width: 100%;
-    margin: 20px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  width: 26.25rem;
+  height: 26.25rem;
+  max-width: 100%;
+  margin: 1.25rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Anillo orbital */
 .anillo-orbita {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 2px dashed var(--color-secundario);
-    border-radius: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed var(--color-secundario);
+  border-radius: 50%;
 }
 
-/* Planeta central circular con la información principal */
 .planeta-central {
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    background-color: var(--color-tarjeta);
-    border: 2px solid var(--color-principal);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    text-align: center;
-    z-index: 2;
+  width: 16.25rem;
+  height: 16.25rem;
+  border-radius: 50%;
+  background-color: var(--color-tarjeta);
+  border: 2px solid var(--color-principal);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  z-index: 2;
 }
-
-.planeta-central h1,
-.planeta-central .h3 {
-    font-size: 1.35rem;
-    margin-bottom: 2px;
+.planeta-central h1, .planeta-central .h3 {
+  font-size: 1.35rem;
+  margin-bottom: 2px;
 }
-
-.planeta-central h2,
-.planeta-central .h6 {
-    font-size: 0.95rem;
-    margin-bottom: 4px;
+.planeta-central h2, .planeta-central .h6 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
 }
-
 .planeta-central p {
-    font-size: 0.78rem;
-    line-height: 1.3;
-    margin-bottom: 8px;
+  font-size: 0.78125rem;
+  line-height: 1.3;
+  margin-bottom: 8px;
 }
-
 .planeta-central .btn {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
-/* Satélites circulares posicionados con position: absolute */
 .satelite {
-    position: absolute;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    background-color: var(--color-caja);
-    border: 2px solid var(--color-secundario);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.72rem;
-    font-weight: bold;
-    color: var(--color-texto);
-    z-index: 3;
+  position: absolute;
+  width: 4.0625rem;
+  height: 4.0625rem;
+  border-radius: 50%;
+  background-color: var(--color-caja);
+  border: 2px solid var(--color-secundario);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.71875rem;
+  font-weight: bold;
+  color: var(--color-texto);
+  z-index: 3;
 }
-
 .satelite small {
-    font-size: 0.55rem;
-    color: var(--color-texto-muted);
-    font-weight: normal;
+  font-size: 0.55rem;
+  color: var(--color-texto-muted);
+  font-weight: normal;
 }
 
-/* Coordenadas fijas en escritorio (420px de ancho) */
 .sat-1 {
-    top: 12px;
-    left: 65px;
-    border-color: #f97316;
+  top: 12px;
+  left: 65px;
+  border-color: #f97316;
 }
 
 .sat-2 {
-    top: 12px;
-    right: 65px;
-    border-color: var(--color-principal);
+  top: 12px;
+  right: 65px;
+  border-color: var(--color-principal);
 }
 
 .sat-3 {
-    top: 177px;
-    left: 0px;
-    border-color: #eab308;
+  top: 177px;
+  left: 0;
+  border-color: #eab308;
 }
 
 .sat-4 {
-    top: 177px;
-    right: 0px;
-    border-color: #ef4444;
+  top: 177px;
+  right: 0;
+  border-color: #ef4444;
 }
 
 .sat-5 {
-    bottom: 12px;
-    right: 65px;
-    border-color: var(--color-secundario);
+  bottom: 12px;
+  right: 65px;
+  border-color: var(--color-secundario);
 }
 
 .sat-6 {
-    bottom: 12px;
-    left: 65px;
-    border-color: #ec4899;
+  bottom: 12px;
+  left: 65px;
+  border-color: #ec4899;
 }
 
-/* --------------------------------------------------------------------------
-   6. TARJETAS DE PLANES (CARDS)
-   -------------------------------------------------------------------------- */
 .tarjeta-plan {
-    background-color: var(--color-tarjeta);
-    border: 1px solid var(--color-borde);
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.2s ease;
 }
-
 .tarjeta-plan:hover {
-    border-color: var(--color-principal);
+  border-color: var(--color-principal);
 }
 
 .precio-plan {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--color-principal);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-principal);
 }
 
 .lista-ventajas {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0;
+  text-align: left;
 }
-
 .lista-ventajas li {
-    padding: 8px 0;
-    font-size: 0.88rem;
-    color: var(--color-texto-muted);
-    border-bottom: 1px solid var(--color-borde);
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  color: var(--color-texto-muted);
+  border-bottom: 1px solid var(--color-borde);
 }
-
 .lista-ventajas li:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
-/* --------------------------------------------------------------------------
-   7. SECCIÓN DE TECNOLOGÍA Y HARDWARE
-   -------------------------------------------------------------------------- */
-.caja-tecnologia {
-    background-color: var(--color-tarjeta);
-    border: 1px solid var(--color-borde);
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+.caja-tecnologia,
+.caja-formulario {
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .caja-estadistica {
-    background-color: var(--color-caja);
-    border: 1px solid var(--color-borde);
-    border-radius: 12px;
-    padding: 16px 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 4px;
-}
-
-/* --------------------------------------------------------------------------
-   8. FORMULARIO DE CONTACTO
-   -------------------------------------------------------------------------- */
-.caja-formulario {
-    background-color: var(--color-tarjeta);
-    border: 1px solid var(--color-borde);
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  background-color: var(--color-caja);
+  border: 1px solid var(--color-borde);
+  border-radius: 0.75rem;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
 }
 
 .input-personalizado {
-    background-color: var(--color-caja) !important;
-    border: 1px solid var(--color-borde) !important;
-    color: var(--color-texto) !important;
-    border-radius: 8px !important;
-    padding: 10px 14px !important;
+  background-color: var(--color-caja) !important;
+  border: 1px solid var(--color-borde) !important;
+  color: var(--color-texto) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.625rem 0.875rem !important;
 }
-
 .input-personalizado:focus {
-    border-color: var(--color-principal) !important;
-    outline: none;
+  border-color: var(--color-principal) !important;
+  outline: none;
 }
 
-/* --------------------------------------------------------------------------
-   9. PIE DE PÁGINA (FOOTER)
-   -------------------------------------------------------------------------- */
 .pie-pagina {
-    background-color: #f1f5f9;
-    border-top: 1px solid var(--color-borde);
+  background-color: var(--color-caja);
+  border-top: 1px solid var(--color-borde);
 }
-
 .pie-pagina a {
-    color: var(--color-texto-muted);
+  color: var(--color-texto-muted);
+  transition: color 0.2s ease;
 }
-
 .pie-pagina a:hover {
-    color: var(--color-principal);
+  color: var(--color-principal);
 }
 
-/* --------------------------------------------------------------------------
-   10. DISEÑO ADAPTATIVO BÁSICO (MEDIA QUERIES)
-   -------------------------------------------------------------------------- */
-
-/* En tablets y móviles ajustamos los botones del menú desplegable */
 @media (max-width: 991px) {
-    .menu-navegacion .btn-conmutador-tema,
-    .menu-navegacion .btn-principal {
-        width: 100%;
-        max-width: 200px;
-    }
+  .menu-navegacion .btn-conmutador-tema,
+  .menu-navegacion .btn-principal {
+    width: 100%;
+    max-width: 12.5rem;
+  }
 }
-
-/* En móviles adaptamos la órbita, el planeta y los botones del Hero */
 @media (max-width: 576px) {
-    .contenedor-orbita {
-        width: 330px;
-        height: 330px;
-        margin: 15px auto;
-    }
-
-    /* El planeta central con 230px tiene espacio de sobra para el contenido */
-    .planeta-central {
-        width: 230px;
-        height: 230px;
-        padding: 12px;
-    }
-
-    .planeta-central .badge {
-        font-size: 0.65rem;
-        padding: 3px 8px;
-        margin-bottom: 2px !important;
-    }
-
-    .planeta-central h1,
-    .planeta-central .h3 {
-        font-size: 1.15rem !important;
-        margin-bottom: 2px !important;
-    }
-
-    .planeta-central h2,
-    .planeta-central .h6 {
-        font-size: 0.85rem !important;
-        margin-bottom: 2px !important;
-    }
-
-    .planeta-central p {
-        font-size: 0.68rem !important;
-        line-height: 1.25 !important;
-        margin-bottom: 8px !important;
-    }
-
-    /* Botón Empezar Ahora dentro del planeta en móvil */
-    .planeta-central .btn {
-        font-size: 0.75rem !important;
-        padding: 4px 14px !important;
-        margin: 0 !important;
-    }
-
-    /* Satélites móviles colocados en las 4 esquinas diagonales (máximo espacio) */
-    .satelite {
-        width: 52px;
-        height: 52px;
-        font-size: 0.62rem;
-    }
-
-    .satelite small {
-        font-size: 0.48rem;
-    }
-
-    /* 4 esquinas diagonales: no tocan el planeta y no se salen del marco */
-    .sat-1 {
-        top: 8px;
-        left: 20px;
-    }
-
-    .sat-2 {
-        top: 8px;
-        right: 20px;
-    }
-
-    .sat-3 {
-        top: auto;
-        bottom: 8px;
-        left: 20px;
-    }
-
-    .sat-4 {
-        top: auto;
-        bottom: 8px;
-        right: 20px;
-    }
-
-    /* Ocultamos los satélites 5 y 6 para mantener simetría perfecta de 4 satélites */
-    .sat-5,
-    .sat-6 {
-        display: none !important;
-    }
+  .contenedor-orbita {
+    width: 20.625rem;
+    height: 20.625rem;
+    margin: 0.9375rem auto;
+  }
+  .planeta-central {
+    width: 14.375rem;
+    height: 14.375rem;
+    padding: 0.75rem;
+  }
+  .planeta-central .badge {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+  .planeta-central h1, .planeta-central .h3 {
+    font-size: 1.15rem !important;
+  }
+  .planeta-central h2, .planeta-central .h6 {
+    font-size: 0.85rem !important;
+  }
+  .planeta-central p {
+    font-size: 0.68125rem !important;
+  }
+  .planeta-central .btn {
+    font-size: 0.75rem !important;
+    padding: 4px 14px !important;
+  }
+  .satelite {
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: 0.625rem;
+  }
+  .satelite small {
+    font-size: 0.48125rem;
+  }
+  .sat-1 {
+    top: 8px;
+    left: 20px;
+  }
+  .sat-2 {
+    top: 8px;
+    right: 20px;
+  }
+  .sat-3 {
+    top: auto;
+    bottom: 8px;
+    left: 20px;
+  }
+  .sat-4 {
+    top: auto;
+    bottom: 8px;
+    right: 20px;
+  }
+  .sat-5, .sat-6 {
+    display: none !important;
+  }
 }
-
-/* Pantallas extra pequeñas (móviles de 320px) */
 @media (max-width: 350px) {
-    .contenedor-orbita {
-        width: 290px;
-        height: 290px;
-    }
-
-    .planeta-central {
-        width: 200px;
-        height: 200px;
-        padding: 8px;
-    }
-
-    .satelite {
-        width: 44px;
-        height: 44px;
-        font-size: 0.55rem;
-    }
-
-    .sat-1 { top: 4px; left: 12px; }
-    .sat-2 { top: 4px; right: 12px; }
-    .sat-3 { bottom: 4px; left: 12px; }
-    .sat-4 { bottom: 4px; right: 12px; }
+  .contenedor-orbita {
+    width: 18.125rem;
+    height: 18.125rem;
+  }
+  .planeta-central {
+    width: 12.5rem;
+    height: 12.5rem;
+    padding: 0.5rem;
+  }
+  .satelite {
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 0.55rem;
+  }
+  .sat-1 {
+    top: 4px;
+    left: 12px;
+  }
+  .sat-2 {
+    top: 4px;
+    right: 12px;
+  }
+  .sat-3 {
+    bottom: 4px;
+    left: 12px;
+  }
+  .sat-4 {
+    bottom: 4px;
+    right: 12px;
+  }
 }

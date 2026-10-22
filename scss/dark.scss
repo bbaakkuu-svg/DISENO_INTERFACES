@@ -1,0 +1,138 @@
+// ============================================================
+// MODO OSCURO (dark.scss)
+// Redefine las variables CSS del :root con la paleta espacial
+// ============================================================
+@use "sass:color";
+@use "sass:map";
+
+// Paleta del tema oscuro en un mapa Sass
+$colores-oscuro: (
+    fondo:        #0a0d1a,
+    tarjeta:      #111827,
+    caja:         #1a2234,
+    principal:    #00f2fe,
+    secundario:   #a855f7,
+    borde:        #374151,
+    texto:        #f1f5f9,
+    texto-muted:  #94a3b8
+);
+
+// Función local para leer el mapa
+@function color-oscuro($nombre) {
+    @return map.get($colores-oscuro, $nombre);
+}
+
+:root {
+    --color-fondo:        #{color-oscuro(fondo)};
+    --color-tarjeta:      #{color-oscuro(tarjeta)};
+    --color-caja:         #{color-oscuro(caja)};
+    --color-principal:    #{color-oscuro(principal)};
+    --color-secundario:   #{color-oscuro(secundario)};
+    --color-borde:        #{color-oscuro(borde)};
+    --color-texto:        #{color-oscuro(texto)};
+    --color-texto-muted:  #{color-oscuro(texto-muted)};
+    --sombra-tarjeta: 0 8px 25px #{color.change(#000000, $alpha: 0.4)};
+}
+
+body {
+    background-color: var(--color-fondo) !important;
+    color: var(--color-texto) !important;
+}
+
+.menu-navegacion {
+    // color.change ajusta la transparencia del fondo del menú en oscuro
+    background-color: color.change(color-oscuro(tarjeta), $alpha: 0.92) !important;
+    border-color: var(--color-borde) !important;
+    box-shadow: 0 4px 20px color.change(#000000, $alpha: 0.5) !important;
+}
+
+.menu-navegacion .nav-link {
+    color: #cbd5e1 !important;
+
+    &:hover {
+        color: var(--color-principal) !important;
+    }
+}
+
+.btn-conmutador-tema {
+    background-color: var(--color-caja) !important;
+    border-color: var(--color-borde) !important;
+    color: var(--color-texto) !important;
+
+    &:hover {
+        border-color: var(--color-principal) !important;
+        color: var(--color-principal) !important;
+    }
+}
+
+.planeta-central {
+    background-color: var(--color-tarjeta) !important;
+    border-color: var(--color-principal) !important;
+    // Efecto neón con color.change para calcular la transparencia del resplandor
+    box-shadow: 0 0 25px color.change(color-oscuro(principal), $alpha: 0.25) !important;
+}
+
+.satelite {
+    background-color: var(--color-caja) !important;
+    border-color: var(--color-secundario) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px color.change(#000000, $alpha: 0.6) !important;
+}
+
+.btn-principal {
+    background-color: var(--color-principal) !important;
+    color: color-oscuro(fondo) !important;
+    box-shadow: 0 0 15px color.change(color-oscuro(principal), $alpha: 0.4);
+
+    &:hover {
+        background-color: #38bdf8 !important;
+        box-shadow: 0 0 20px color.change(color-oscuro(principal), $alpha: 0.6);
+    }
+}
+
+.tarjeta-plan,
+.caja-tecnologia,
+.caja-formulario {
+    background-color: var(--color-tarjeta) !important;
+    border-color: var(--color-borde) !important;
+}
+
+.tarjeta-plan:hover {
+    border-color: var(--color-principal) !important;
+}
+
+.lista-ventajas li {
+    border-color: color.change(#ffffff, $alpha: 0.06) !important;
+    color: #cbd5e1 !important;
+}
+
+.caja-estadistica {
+    background-color: var(--color-caja) !important;
+    border-color: color.change(#ffffff, $alpha: 0.05) !important;
+}
+
+.input-personalizado {
+    background-color: var(--color-caja) !important;
+    border-color: var(--color-borde) !important;
+    color: #ffffff !important;
+
+    &:focus {
+        border-color: var(--color-principal) !important;
+        box-shadow: 0 0 0 0.2rem color.change(color-oscuro(principal), $alpha: 0.25) !important;
+    }
+
+    &::placeholder {
+        color: #64748b !important;
+    }
+}
+
+.pie-pagina {
+    background-color: #070a14 !important;
+    border-color: var(--color-borde) !important;
+
+    a {
+        color: #94a3b8 !important;
+
+        &:hover { color: var(--color-principal) !important; }
+    }
+}
