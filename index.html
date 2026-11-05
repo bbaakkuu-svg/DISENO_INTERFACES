@@ -3,32 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Viewport necesario para que Bootstrap gestione el diseño responsive -->
+    <!-- Viewport para diseño adaptable (Responsive Design) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Start Light - Conectividad Satelital</title>
 
-    <!-- Bootstrap 5 CSS (Framework responsive) -->
+    <!-- Framework CSS: Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Iconos de Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Fuente Outfit de Google Fonts -->
+    <!-- Tipografía Outfit de Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap">
 
     <!-- ======================================================================
-         JERARQUÍA DE ESTILOS: 1. HOJA EXTERNA PRINCIPAL (css/styles.css)
+         JERARQUÍA DE ESTILOS CSS:
+         1. Hoja externa principal (compilada desde Sass: scss/styles.scss)
          ====================================================================== -->
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- ======================================================================
-         TEMA ALTERNATIVO: HOJA ALTERNATIVA (css/dark.css)
+         TEMA ALTERNATIVO:
+         Hoja alternativa enlazada con rel="alternate stylesheet" (Modo Oscuro)
          ====================================================================== -->
     <link rel="alternate stylesheet" id="tema-oscuro" href="css/dark.css" title="Modo Oscuro" disabled>
 
     <!-- ======================================================================
-         JERARQUÍA DE ESTILOS: 2. ESTILO INTERNO (<style> en el <head>)
+         JERARQUÍA DE ESTILOS CSS:
+         2. Estilo interno (<style> en el <head>)
          ====================================================================== -->
     <style>
-        /* 2. ESTILO INTERNO (<style> en el <head>) */
         body {
             font-family: 'Outfit', sans-serif;
         }
@@ -37,46 +39,37 @@
 
 <body>
 
-    <!-- ==========================================
-         1. MENÚ DE NAVEGACIÓN (NAVBAR DE BOOTSTRAP)
-         ========================================== -->
+    <!-- ======================================================================
+         1. BARRA DE NAVEGACIÓN (NAVBAR)
+         ====================================================================== -->
     <header class="header-flotante">
         <div class="container">
             <nav class="navbar navbar-expand-lg menu-navegacion px-3 py-2">
-                <!-- Logotipo del sitio -->
+                <!-- Logotipo -->
                 <a class="navbar-brand fw-bold color-principal" href="#inicio">
-                    <span>•</span> Start Light
+                    <span>✦</span> Start Light
                 </a>
 
-                <!-- Enlaces del menú que colapsan en pantallas móviles -->
+                <!-- Enlaces de navegación colapsables en móvil -->
                 <div class="collapse navbar-collapse" id="menuNavegacion">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#inicio">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#planes">Planes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#tecnologia">Tecnología</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contacto">Contacto</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#planes">Planes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tecnologia">Tecnología</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                     </ul>
 
-                    <!-- Controles de cabecera: Botón conmutador de tema y botón de acción -->
                     <div class="d-flex flex-column flex-lg-row align-items-center gap-2 text-center">
                         <a href="#planes" class="btn btn-principal">Empezar</a>
                     </div>
                 </div>
 
-                <!-- El conmutador permanece visible aunque el menú esté colapsado en móvil -->
+                <!-- Botón de cambio de tema: siempre visible en móvil y escritorio -->
                 <button id="btn-tema" class="btn-conmutador-tema" type="button" aria-label="Cambiar tema">
                     Modo Oscuro
                 </button>
 
-                <!-- Botón hamburguesa estándar de Bootstrap para móviles -->
+                <!-- Botón hamburguesa estándar para móviles -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion"
                     aria-controls="menuNavegacion" aria-expanded="false" aria-label="Abrir menú">
                     <span class="navbar-toggler-icon"></span>
@@ -87,25 +80,25 @@
 
     <main>
 
-        <!-- ==========================================
-             2. SECCIÓN HERO (PORTADA CON ÓRBITA)
-             ========================================== -->
+        <!-- ==================================================================
+             2. PORTADA (HERO) CON ÓRBITA Y SATÉLITES
+             ================================================================== -->
         <section id="inicio" class="py-5 text-center">
             <div class="container">
 
-                <!-- ==========================================================
-                     JERARQUÍA DE ESTILOS: 3. ESTILO EN LÍNEA (style="...")
-                     ========================================================== -->
+                <!-- ==============================================================
+                     JERARQUÍA DE ESTILOS CSS:
+                     3. Estilo en línea (style="...") - Demuestra máxima especificidad
+                     ============================================================== -->
                 <span class="badge badge-principal mb-3" style="color: #d97706; border-color: #f59e0b;">
                     CONECTIVIDAD SATELITAL DE ALTA VELOCIDAD
                 </span>
 
-                <!-- Contenedor con posición relativa para referenciar satélites absolutos -->
+                <!-- Contenedor orbital: satélites posicionados con CSS absoluto -->
                 <div class="contenedor-orbita">
-                    <!-- Anillo orbital decorativo -->
                     <div class="anillo-orbita"></div>
 
-                    <!-- Satélites orbitales con datos técnicos -->
+                    <!-- Satélites con datos técnicos del servicio -->
                     <div class="satelite sat-1">250 Mbps<small>Descarga</small></div>
                     <div class="satelite sat-2">&lt;20 ms<small>Latencia</small></div>
                     <div class="satelite sat-3">99.99%<small>Uptime</small></div>
@@ -113,32 +106,31 @@
                     <div class="satelite sat-5">24/7<small>Soporte</small></div>
                     <div class="satelite sat-6">Auto<small>Orientación</small></div>
 
-                    <!-- Planeta central con contenido principal -->
+                    <!-- Planeta central con llamada a la acción -->
                     <div class="planeta-central">
                         <span class="badge badge-principal mb-2">GLOBAL</span>
                         <h1 class="h3 fw-bold mb-1">Start Light</h1>
                         <h2 class="h6 color-principal mb-2">Satelital</h2>
-                        <p class="small text-secondary mb-3">Internet de alta velocidad y baja latencia en cualquier
-                            rincón del planeta.</p>
+                        <p class="small text-secondary mb-3">Internet de alta velocidad y baja latencia en cualquier rincón del planeta.</p>
                         <a href="#planes" class="btn btn-principal btn-sm mb-2">Empezar Ahora</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             3. SECCIÓN PRINCIPAL: REJILLA DE TARJETAS (CARDS)
-             ========================================== -->
+        <!-- ==================================================================
+             3. SECCIÓN DE PLANES Y PRECIOS (TARJETAS RESPONSIVE)
+             ================================================================== -->
         <section id="planes" class="py-5">
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="h3 d-inline-block badge-principal px-3 py-2">Planes de Conectividad Global</h2>
                 </div>
 
-                <!-- Rejilla responsive: 1 col (móvil), 2 cols (tablet), 3 cols (escritorio) -->
+                <!-- Rejilla Bootstrap: 1 col (móvil), 2 cols (tablet), 3 cols (escritorio) -->
                 <div class="row g-4">
 
-                    <!-- Tarjeta 1: Residencial -->
+                    <!-- Plan 1: Residencial -->
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="tarjeta-plan h-100 p-4 text-center d-flex flex-column">
                             <span class="badge badge-principal mb-2 align-self-center">HOGAR</span>
@@ -146,18 +138,15 @@
                             <p class="precio-plan mb-1">65€<span class="fs-6 text-secondary">/mes</span></p>
                             <p class="small text-secondary mb-3">Hasta 150 Mbps de descarga</p>
                             <ul class="lista-ventajas my-auto">
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Internet ilimitado en
-                                    casa</li>
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Kit autoinstalable
-                                    guiado</li>
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Sin contratos ni
-                                    permanencia</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Internet ilimitado en casa</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Kit autoinstalable guiado</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Sin contratos ni permanencia</li>
                             </ul>
                             <a href="#contacto" class="btn btn-principal mt-3 w-100">Elegir Plan</a>
                         </article>
                     </div>
 
-                    <!-- Tarjeta 2: Business -->
+                    <!-- Plan 2: Business -->
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="tarjeta-plan h-100 p-4 text-center d-flex flex-column">
                             <span class="badge badge-principal mb-2 align-self-center">EMPRESAS</span>
@@ -165,18 +154,15 @@
                             <p class="precio-plan mb-1">150€<span class="fs-6 text-secondary">/mes</span></p>
                             <p class="small text-secondary mb-3">Hasta 350 Mbps de descarga</p>
                             <ul class="lista-ventajas my-auto">
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Prioridad en la red 24/7
-                                </li>
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>IP fija y telemetría
-                                    avanzada</li>
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Soporte técnico
-                                    preferente</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Prioridad en la red 24/7</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>IP fija y telemetría avanzada</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Soporte técnico preferente</li>
                             </ul>
                             <a href="#contacto" class="btn btn-principal mt-3 w-100">Elegir Plan</a>
                         </article>
                     </div>
 
-                    <!-- Tarjeta 3: Marítimo -->
+                    <!-- Plan 3: Marítimo -->
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="tarjeta-plan h-100 p-4 text-center d-flex flex-column">
                             <span class="badge badge-principal mb-2 align-self-center">ALTA MAR</span>
@@ -184,18 +170,15 @@
                             <p class="precio-plan mb-1">250€<span class="fs-6 text-secondary">/mes</span></p>
                             <p class="small text-secondary mb-3">Aguas internacionales y costeras</p>
                             <ul class="lista-ventajas my-auto">
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Cobertura global en
-                                    navegación</li>
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Hardware resistente a
-                                    salitre</li>
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Telemetría marítima en
-                                    vivo</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Cobertura global en navegación</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Hardware resistente a salitre</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Telemetría marítima en vivo</li>
                             </ul>
                             <a href="#contacto" class="btn btn-principal mt-3 w-100">Elegir Plan</a>
                         </article>
                     </div>
 
-                    <!-- Tarjeta 4: Aviación -->
+                    <!-- Plan 4: Aviación -->
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="tarjeta-plan h-100 p-4 text-center d-flex flex-column">
                             <span class="badge badge-principal mb-2 align-self-center">EN VUELO</span>
@@ -203,18 +186,15 @@
                             <p class="precio-plan mb-1">450€<span class="fs-6 text-secondary">/mes</span></p>
                             <p class="small text-secondary mb-3">Conexión aérea durante el vuelo</p>
                             <ul class="lista-ventajas my-auto">
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Cobertura continua en
-                                    altitud</li>
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Baja latencia en ruta
-                                </li>
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Equipamiento homologado
-                                </li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Cobertura continua en altitud</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Baja latencia en ruta</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Equipamiento homologado</li>
                             </ul>
                             <a href="#contacto" class="btn btn-principal mt-3 w-100">Elegir Plan</a>
                         </article>
                     </div>
 
-                    <!-- Tarjeta 5: Movilidad / Roam -->
+                    <!-- Plan 5: Roam -->
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="tarjeta-plan h-100 p-4 text-center d-flex flex-column">
                             <span class="badge badge-principal mb-2 align-self-center">MOVILIDAD</span>
@@ -222,18 +202,15 @@
                             <p class="precio-plan mb-1">89€<span class="fs-6 text-secondary">/mes</span></p>
                             <p class="small text-secondary mb-3">Para caravanas y campistas</p>
                             <ul class="lista-ventajas my-auto">
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Conexión portátil en
-                                    cualquier punto</li>
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Pausa de cuota por meses
-                                </li>
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Bajo consumo energético
-                                </li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Conexión portátil en cualquier punto</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Pausa de cuota por meses</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Bajo consumo energético</li>
                             </ul>
                             <a href="#contacto" class="btn btn-principal mt-3 w-100">Elegir Plan</a>
                         </article>
                     </div>
 
-                    <!-- Tarjeta 6: Emergencias -->
+                    <!-- Plan 6: Emergencias -->
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="tarjeta-plan h-100 p-4 text-center d-flex flex-column">
                             <span class="badge badge-principal mb-2 align-self-center">CRÍTICO</span>
@@ -241,12 +218,9 @@
                             <p class="precio-plan mb-1">120€<span class="fs-6 text-secondary">/mes</span></p>
                             <p class="small text-secondary mb-3">Respaldo ante cortes e incidencias</p>
                             <ul class="lista-ventajas my-auto">
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Despliegue operativo en
-                                    5 min</li>
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Enlace prioritario
-                                    reservado</li>
-                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Ideal para protección
-                                    civil</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Despliegue operativo en 5 min</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Enlace prioritario reservado</li>
+                                <li><i class="bi bi-check-circle-fill color-principal me-2"></i>Ideal para protección civil</li>
                             </ul>
                             <a href="#contacto" class="btn btn-principal mt-3 w-100">Elegir Plan</a>
                         </article>
@@ -256,16 +230,15 @@
             </div>
         </section>
 
-        <!-- ==========================================
+        <!-- ==================================================================
              4. SECCIÓN DE TECNOLOGÍA (HARDWARE)
-             ========================================== -->
+             ================================================================== -->
         <section id="tecnologia" class="py-5">
             <div class="container">
                 <div class="caja-tecnologia p-4 p-md-5">
                     <span class="badge badge-principal mb-2">HARDWARE</span>
                     <h2 class="h3 fw-bold mb-2">Terminal Phased Array con Auto-Orientación</h2>
-                    <p class="text-secondary mb-4">Antena inteligente para enlazar satélites de órbita baja con máxima
-                        eficiencia energética.</p>
+                    <p class="text-secondary mb-4">Antena inteligente para enlazar satélites de órbita baja con máxima eficiencia energética.</p>
 
                     <!-- Rejilla de especificaciones técnicas -->
                     <div class="row g-3 text-center mb-4">
@@ -299,19 +272,17 @@
                         </div>
                     </div>
 
-                    <div
-                        class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 pt-3 border-top">
-                        <p class="mb-0 text-secondary">Kit autoinstalable con soporte guiado mediante aplicación móvil.
-                        </p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 pt-3 border-top">
+                        <p class="mb-0 text-secondary">Kit autoinstalable con soporte guiado mediante aplicación móvil.</p>
                         <a href="#contacto" class="btn btn-principal">Pedir Kit</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             5. SECCIÓN DE CONTACTO Y COBERTURA
-             ========================================== -->
+        <!-- ==================================================================
+             5. SECCIÓN DE CONTACTO
+             ================================================================== -->
         <section id="contacto" class="py-5">
             <div class="container">
                 <div class="row justify-content-center">
@@ -319,26 +290,20 @@
                         <div class="caja-formulario p-4 p-md-5 text-center">
                             <span class="badge badge-principal mb-2">COBERTURA</span>
                             <h2 class="h3 fw-bold mb-2">Verifica tu Ubicación</h2>
-                            <p class="text-secondary mb-4">Introduce tus datos para consultar disponibilidad del
-                                servicio en tu zona.</p>
+                            <p class="text-secondary mb-4">Introduce tus datos para consultar disponibilidad del servicio en tu zona.</p>
 
-                            <!-- Formulario con campos estándar -->
-                            <form onsubmit="event.preventDefault(); alert('Solicitud enviada correctamente.');"
-                                class="text-start">
+                            <form onsubmit="event.preventDefault(); alert('Solicitud enviada correctamente.');" class="text-start">
                                 <div class="mb-3">
                                     <label class="form-label small text-secondary">Nombre completo</label>
-                                    <input type="text" class="form-control input-personalizado"
-                                        placeholder="Ej. Alex García" required>
+                                    <input type="text" class="form-control input-personalizado" placeholder="Ej. Alex García" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label small text-secondary">Correo electrónico</label>
-                                    <input type="email" class="form-control input-personalizado"
-                                        placeholder="nombre@correo.com" required>
+                                    <input type="email" class="form-control input-personalizado" placeholder="nombre@correo.com" required>
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label small text-secondary">Dirección o localidad</label>
-                                    <input type="text" class="form-control input-personalizado"
-                                        placeholder="Calle, localidad o código postal" required>
+                                    <input type="text" class="form-control input-personalizado" placeholder="Calle, localidad o código postal" required>
                                 </div>
                                 <button type="submit" class="btn btn-principal w-100 py-2">Consultar Cobertura</button>
                             </form>
@@ -349,17 +314,16 @@
         </section>
     </main>
 
-    <!-- ==========================================
+    <!-- ==================================================================
          6. PIE DE PÁGINA (FOOTER)
-         ========================================== -->
+         ================================================================== -->
     <footer class="pie-pagina py-5 mt-4">
         <div class="container">
             <div class="row g-4">
                 <div class="col-12 col-md-6 col-lg-4">
                     <h3 class="h5 fw-bold"><span class="color-principal">•</span> Start Light</h3>
-                    <p class="small text-secondary mb-2">Internet satelital de alta velocidad sin cables ni barreras
-                        geográficas.</p>
-                    <small class="text-secondary">© 2026 Start Light Inc. Práctica de Interfaces.</small>
+                    <p class="small text-secondary mb-2">Internet satelital de alta velocidad sin cables ni barreras geográficas.</p>
+                    <small class="text-secondary">© 2026 Start Light Inc. Práctica de Interfaces Web.</small>
                 </div>
                 <div class="col-6 col-md-6 col-lg-2">
                     <h4 class="h6 mb-3">Planes</h4>
@@ -383,31 +347,26 @@
                     <ul class="list-unstyled small">
                         <li class="mb-2"><a href="#contacto">Centro de Ayuda</a></li>
                         <li class="mb-2"><a href="#contacto">Preguntas Frecuentes</a></li>
-                        <li class="mt-3"><a href="#inicio" class="color-principal fw-bold"><i
-                                    class="bi bi-arrow-up-circle me-1"></i> Volver arriba</a></li>
+                        <li class="mt-3"><a href="#inicio" class="color-principal fw-bold"><i class="bi bi-arrow-up-circle me-1"></i> Volver arriba</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JavaScript Bundle (necesario para el menú hamburguesa colapsable) -->
+    <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Script para alternar la hoja de estilos alternativa (css/dark.css) -->
+    <!-- Alternancia de Tema Claro / Oscuro con Vanilla JS -->
     <script>
         const btnTema = document.getElementById('btn-tema');
         const temaOscuro = document.getElementById('tema-oscuro');
+
         btnTema.addEventListener('click', function () {
-            // Si la hoja alternativa está deshabilitada, la activamos (modo oscuro)
-            if (temaOscuro.disabled) {
-                temaOscuro.disabled = false;
-                btnTema.textContent = ' Modo Claro';
-            } else {
-                // Si está habilitada, la desactivamos (volvemos a modo claro)
-                temaOscuro.disabled = true;
-                btnTema.textContent = ' Modo Oscuro';
-            }
+            // Habilitamos o deshabilitamos la hoja alternativa 'css/dark.css'
+            const activarOscuro = temaOscuro.disabled;
+            temaOscuro.disabled = !activarOscuro;
+            btnTema.textContent = activarOscuro ? 'Modo Claro' : 'Modo Oscuro';
         });
     </script>
 </body>

@@ -44,8 +44,6 @@ a {
   font-weight: 600;
   padding: 0.375rem 0.875rem;
   display: inline-block;
-  white-space: normal;
-  max-width: 90%;
 }
 
 .btn-principal {
@@ -149,9 +147,6 @@ a {
   font-size: 0.78125rem;
   line-height: 1.3;
   margin-bottom: 8px;
-}
-.planeta-central .btn {
-  white-space: nowrap;
 }
 
 .satelite {
@@ -289,10 +284,6 @@ a {
 }
 
 @media (max-width: 991px) {
-  .menu-navegacion .btn-conmutador-tema {
-    width: auto;
-    max-width: none;
-  }
   .menu-navegacion .btn-principal {
     width: 100%;
     max-width: 12.5rem;
@@ -309,10 +300,6 @@ a {
     height: 14.375rem;
     padding: 0.75rem;
   }
-  .planeta-central .badge {
-    font-size: 0.65rem;
-    padding: 3px 8px;
-  }
   .planeta-central h1, .planeta-central .h3 {
     font-size: 1.15rem !important;
   }
@@ -321,10 +308,6 @@ a {
   }
   .planeta-central p {
     font-size: 0.68125rem !important;
-  }
-  .planeta-central .btn {
-    font-size: 0.75rem !important;
-    padding: 4px 14px !important;
   }
   .satelite {
     width: 3.25rem;

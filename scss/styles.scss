@@ -1,14 +1,13 @@
-// ============================================================
-// MÓDULOS DE SASS (funciones nativas)
-// ============================================================
-@use "sass:color";   // Para manipular colores: adjust, change
-@use "sass:map";     // Para leer mapas: map.get
-@use "sass:math";    // Para operaciones matemáticas: math.div
+// ==========================================================================
+// ESTILOS PRINCIPALES (SASS / SCSS) - TEMA CLARO PREDETERMINADO
+// ==========================================================================
 
-// ============================================================
-// MAPA DE COLORES (modo claro)
-// Agrupa toda la paleta en un solo lugar para facilitar cambios
-// ============================================================
+// 1. IMPORTACIÓN DE MÓDULOS NATIVOS DE SASS
+@use "sass:color";   // Manipulación de colores: color.change, color.adjust
+@use "sass:map";     // Manejo de mapas: map.get
+@use "sass:math";    // Operaciones matemáticas seguras: math.div
+
+// 2. MAPA DE COLORES (Tokens de diseño)
 $colores: (
     fondo:        #f8fafc,
     tarjeta:      #ffffff,
@@ -20,27 +19,19 @@ $colores: (
     texto-muted:  #64748b
 );
 
-// ============================================================
-// FUNCIÓN PROPIA: obtener-color()
-// Usa la función nativa map.get para acceder al mapa $colores
-// ============================================================
+// 3. FUNCIONES PROPIAS
+// 3.1. Obtener color del mapa usando la función nativa map.get()
 @function obtener-color($nombre) {
     @return map.get($colores, $nombre);
 }
 
-// ============================================================
-// FUNCIÓN PROPIA: rem()
-// Usa la función nativa math.div para convertir px a rem
-// ============================================================
+// 3.2. Conversión de píxeles a rem usando la función nativa math.div()
 @function rem($px) {
     @return math.div($px, 16px) * 1rem;
 }
 
-// ============================================================
-// MIXIN: tarjeta()
-// Aplica fondo, borde redondeado y sombra semitransparente
-// Usa la función nativa color.change para calcular la opacidad
-// ============================================================
+// 4. MIXINS PROPIOS
+// 4.1. Tarjeta: asigna fondo, borde redondeado y sombra con opacidad calculada
 @mixin tarjeta($fondo, $borde-color) {
     background-color: $fondo;
     border: 1px solid $borde-color;
@@ -48,28 +39,19 @@ $colores: (
     box-shadow: 0 2px 8px color.change(#000000, $alpha: 0.04);
 }
 
-// ============================================================
-// MIXIN: transicion()
-// Estandariza las transiciones de hover en todo el proyecto
-// ============================================================
+// 4.2. Transición: unifica animaciones de hover
 @mixin transicion($propiedad: all, $duracion: 0.2s) {
     transition: $propiedad $duracion ease;
 }
 
-// ============================================================
-// MIXIN: responsive()
-// Genera media queries a partir de un ancho máximo en px
-// ============================================================
+// 4.3. Responsive: abstrae Media Queries para breakpoints limpios
 @mixin responsive($ancho-max) {
     @media (max-width: $ancho-max) {
         @content;
     }
 }
 
-// ============================================================
-// CSS CUSTOM PROPERTIES (variables nativas del navegador)
-// Se generan interpolando los valores del mapa de Sass
-// ============================================================
+// 5. VARIABLES CSS EN EL :root (Interpoladas desde Sass)
 :root {
     --color-fondo:        #{obtener-color(fondo)};
     --color-tarjeta:      #{obtener-color(tarjeta)};
@@ -81,9 +63,7 @@ $colores: (
     --color-texto-muted:  #{obtener-color(texto-muted)};
 }
 
-// ============================================================
-// ESTILOS GENERALES
-// ============================================================
+// 6. ESTILOS GLOBALES
 * {
     box-sizing: border-box;
 }
@@ -106,16 +86,13 @@ a {
     color: inherit;
 }
 
-// ============================================================
-// CLASES PROPIAS
-// ============================================================
+// 7. COMPONENTES Y UTILIDADES
 .color-principal {
     color: var(--color-principal) !important;
 }
 
-// Píldora de etiquetas con color calculado automáticamente por Sass
+// Píldora decorativa con fondo semitransparente generado por color.change
 .badge-principal {
-    // color.change ajusta el canal alfa (transparencia) del color
     background-color: color.change(obtener-color(principal), $alpha: 0.10);
     color: var(--color-principal);
     border: 1px solid var(--color-principal);
@@ -124,11 +101,9 @@ a {
     font-weight: 600;
     padding: rem(6px) rem(14px);
     display: inline-block;
-    white-space: normal;
-    max-width: 90%;
 }
 
-// Botón principal: hover oscurecido automáticamente con color.adjust
+// Botón principal con hover oscurecido automáticamente mediante color.adjust
 .btn-principal {
     background-color: var(--color-principal);
     color: #ffffff !important;
@@ -140,14 +115,11 @@ a {
     @include transicion(background-color);
 
     &:hover {
-        // color.adjust modifica la luminosidad un -10% sobre el color base
         background-color: color.adjust(obtener-color(principal), $lightness: -10%);
     }
 }
 
-// ============================================================
-// MENÚ DE NAVEGACIÓN FLOTANTE
-// ============================================================
+// 8. BARRA DE NAVEGACIÓN FLOTANTE
 .header-flotante {
     position: sticky;
     top: rem(15px);
@@ -172,6 +144,7 @@ a {
     }
 }
 
+// Botón de alternancia de tema claro / oscuro
 .btn-conmutador-tema {
     font-size: rem(13.6px);
     font-weight: 600;
@@ -189,9 +162,7 @@ a {
     }
 }
 
-// ============================================================
-// PORTADA: ÓRBITA Y SATÉLITES
-// ============================================================
+// 9. PORTADA (HERO): ÓRBITA Y SATÉLITES
 .contenedor-orbita {
     position: relative;
     width: rem(420px);
@@ -228,8 +199,7 @@ a {
 
     h1, .h3 { font-size: rem(21.6px); margin-bottom: 2px; }
     h2, .h6 { font-size: rem(15.2px); margin-bottom: 4px; }
-    p        { font-size: rem(12.5px); line-height: 1.3; margin-bottom: 8px; }
-    .btn     { white-space: nowrap; }
+    p       { font-size: rem(12.5px); line-height: 1.3; margin-bottom: 8px; }
 }
 
 .satelite {
@@ -255,6 +225,7 @@ a {
     }
 }
 
+// Posicionamiento de satélites en la órbita circular
 .sat-1 { top: 12px;  left: 65px;  border-color: #f97316; }
 .sat-2 { top: 12px;  right: 65px; border-color: var(--color-principal); }
 .sat-3 { top: 177px; left: 0;     border-color: #eab308; }
@@ -262,9 +233,7 @@ a {
 .sat-5 { bottom: 12px; right: 65px; border-color: var(--color-secundario); }
 .sat-6 { bottom: 12px; left: 65px;  border-color: #ec4899; }
 
-// ============================================================
-// TARJETAS DE PLANES
-// ============================================================
+// 10. TARJETAS DE PLANES
 .tarjeta-plan {
     @include tarjeta(var(--color-tarjeta), var(--color-borde));
     @include transicion(border-color);
@@ -296,9 +265,7 @@ a {
     }
 }
 
-// ============================================================
-// TECNOLOGÍA Y FORMULARIO
-// ============================================================
+// 11. SECCIÓN DE TECNOLOGÍA Y FORMULARIO
 .caja-tecnologia,
 .caja-formulario {
     @include tarjeta(var(--color-tarjeta), var(--color-borde));
@@ -328,9 +295,7 @@ a {
     }
 }
 
-// ============================================================
-// PIE DE PÁGINA
-// ============================================================
+// 12. PIE DE PÁGINA
 .pie-pagina {
     background-color: var(--color-caja);
     border-top: 1px solid var(--color-borde);
@@ -343,15 +308,8 @@ a {
     }
 }
 
-// ============================================================
-// RESPONSIVE CON EL MIXIN responsive()
-// ============================================================
+// 13. DISEÑO ADAPTABLE (MEDIA QUERIES CON MIXIN)
 @include responsive(991px) {
-    .menu-navegacion .btn-conmutador-tema {
-        width: auto;
-        max-width: none;
-    }
-
     .menu-navegacion .btn-principal {
         width: 100%;
         max-width: rem(200px);
@@ -370,11 +328,9 @@ a {
         height: rem(230px);
         padding: rem(12px);
 
-        .badge { font-size: rem(10.4px); padding: 3px 8px; }
         h1, .h3 { font-size: rem(18.4px) !important; }
         h2, .h6 { font-size: rem(13.6px) !important; }
-        p        { font-size: rem(10.9px) !important; }
-        .btn     { font-size: rem(12px) !important; padding: 4px 14px !important; }
+        p       { font-size: rem(10.9px) !important; }
     }
 
     .satelite {
